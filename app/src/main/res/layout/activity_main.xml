@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Введите данные"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/fio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ФИО" />
+
+    <EditText
+        android:id="@+id/group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Группа" />
+
+    <EditText
+        android:id="@+id/age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Возраст" />
+
+    <EditText
+        android:id="@+id/grade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Оценка" />
+
+    <!-- ДЕКЛАРАТИВНЫЙ способ -->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Декларативный переход"
+        android:onClick="openSecondActivity" />
+
+    <!-- ПРОГРАММНЫЙ способ -->
+    <Button
+        android:id="@+id/buttonProgram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Программный переход" />
+
+</LinearLayout>
