@@ -18,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            android.util.Log.d("VERSION", "Android 8.0 or higher");
+        }
         Log.d(TAG, "onCreate");
 
         fio = findViewById(R.id.fio);
@@ -26,9 +28,14 @@ public class MainActivity extends AppCompatActivity {
         age = findViewById(R.id.age);
         grade = findViewById(R.id.grade);
 
-        Button buttonProgram = findViewById(R.id.buttonProgram);
+        if (savedInstanceState != null) {
+            fio.setText(savedInstanceState.getString("fio_text"));
+            group.setText(savedInstanceState.getString("group_text"));
+            age.setText(savedInstanceState.getString("age_text"));
+            grade.setText(savedInstanceState.getString("grade_text"));
+        }
 
-        // ПРОГРАММНЫЙ способ
+        Button buttonProgram = findViewById(R.id.buttonProgram);
         buttonProgram.setOnClickListener(v -> openActivity());
     }
 
@@ -60,6 +67,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG, "onDestroy");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putString("fio_text", fio.getText().toString());
+        outState.putString("group_text", group.getText().toString());
+        outState.putString("age_text", age.getText().toString());
+        outState.putString("grade_text", grade.getText().toString());
     }
 
     // ДЕКЛАРАТИВНЫЙ способ
