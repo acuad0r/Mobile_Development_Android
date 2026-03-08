@@ -6,6 +6,7 @@
     <string name="hint_age">Возраст</string>
     <string name="hint_grade">Оценка</string>
     <string name="button_decl">Декларативный переход</string>
+    <string name="button_send">Отправить</string>
     <string name="button_prog">Программный переход</string>
     <string name="app_name">Reshetnyak_Denis_Andreevich</string>
 </resources>
